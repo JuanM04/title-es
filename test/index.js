@@ -1,79 +1,60 @@
 // Packages
-const test = require('ava')
+const test = require("ava");
 
 // Source
-const title = require('../')
+const title = require("../");
 
-test(t => {
-  const from = 'aPi 2.0: lOG-in with zeit, new dOCs & more'
-  const to = 'API 2.0: Log-In with ZEIT, New Docs & More'
+test((t) => {
+  const from = "aPi 2.0: loguéAtE con vercel, NUeva DocuMENTACióN y MáS";
+  const to = "API 2.0: Loguéate con Vercel, Nueva Documentación y Más";
 
-  t.is(title(from), to)
-})
+  t.is(title(from), to);
+});
 
-test(t => {
-  const from = 'updates TO hAndLinG of Failed paYMEnts'
-  const to = 'Updates to Handling of Failed Payments'
+test((t) => {
+  const from = "axel KicIlloF anUNciÓ que pagarÁ $500 pOr día a enferMos de corOnavirus que se alojEn en ceNtrOs extraHospiTaLaRIoS";
+  const to = "Axel Kicillof Anunció Que Pagará $500 por Día a Enfermos de Coronavirus Que Se Alojen en Centros Extrahospitalarios";
 
-  t.is(title(from), to)
-})
+  t.is(title(from), to);
+});
 
-test(t => {
-  const from = 'toWArds NEXT.JS 5: Introducing cANaRY Updates'
-  const to = 'Towards Next.js 5: Introducing Canary Updates'
+test((t) => {
+  const from = "las mayúsculas donde corresponden";
+  const to = "Las Mayúsculas Donde Corresponden";
 
-  t.is(title(from), to)
-})
+  t.is(title(from), to);
+});
 
-test(t => {
-  const from = 'noW deSktop and now cLI are prODUCts of zeIt'
-  const to = 'Now Desktop and Now CLI Are Products of ZEIT'
+test((t) => {
+  const from = "mI mArCa está Re poTENte";
+  const to = "Mi MARcA Está Re Potente";
 
-  t.is(title(from), to)
-})
+  t.is(
+    title(from, {
+      special: ["MARcA"],
+    }),
+    to
+  );
+});
 
-test(t => {
-  const from = 'capitalize your titles'
-  const to = 'Capitalize Your Titles'
+test((t) => {
+  const from = "y OTRas Cómo FacebOOk o MICROSoft";
+  const to = "Y Otras Cómo facebook o Microsoft";
 
-  t.is(title(from), to)
-})
+  t.is(
+    title(from, {
+      special: ["facebook", "Microsoft"],
+    }),
+    to
+  );
+});
 
-test(t => {
-  const from = 'mY cusToM brand is awesome'
-  const to = 'My Custom BRAnD Is awesoMe'
+test("no debería capitalizar dentro de paréntesis adyacentes", (t) => {
+  let from = "uno(a) es importante";
+  let to = "Uno(a) es Importante";
+  t.is(title(from), to);
 
-  t.is(title(from, {
-    special: ['BRAnD', 'awesoMe']
-  }), to)
-})
-
-test(t => {
-  const from = 'modify speCials like Facebook or microsoft'
-  const to = 'Modify Specials like facebook or Microsoft'
-
-  t.is(title(from, {
-    special: ['facebook', 'Microsoft']
-  }), to)
-})
-
-test(t => {
-  const from = "seattle’S BEST coffee & grandma's cookies"
-  const to = "Seattle’s Best Coffee & Grandma's Cookies"
-
-  t.is(title(from), to)
-})
-
-test("should not capitalize word in adjacent parens", t => {
-  let from = "employment region(s) for my application"
-  let to = "Employment Region(s) for My Application"
-  t.is(title(from), to)
-
-  from = "(s)omething or other"
-  to = "(s)omething or Other"
-  t.is(title(from), to)
-
-  from = "cat(s) can be a pain"
-  to = "Cat(s) can Be a Pain"
-  t.is(title(from), to)
-})
+  from = "(s)uuuu suuu";
+  to = "(s)uuuu Suuu";
+  t.is(title(from), to);
+});

@@ -1,9 +1,9 @@
 {
-  "name": "title",
+  "name": "title-es",
   "version": "3.4.2",
-  "description": "Capitalize your titles properly",
+  "description": "Las Mayúsculas Donde Corresponden",
   "main": "./lib/index.js",
-  "repository": "zeit/title",
+  "repository": "JuanM04/title-es",
   "scripts": {
     "test": "ava"
   },
@@ -23,6 +23,13 @@
     "lib"
   ],
   "author": "leo",
+  "contributors": [
+    {
+      "name": "JuanM04",
+      "email": "me@juanm04.com",
+      "url": "https://juanm04.com"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
     "arg": "1.0.0",

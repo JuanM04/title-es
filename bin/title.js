@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 
-// Packages
+// Paquetes
 const parse = require('arg')
 const { red, grey, blue } = require('chalk')
 const clipboardy = require('clipboardy')
 
-// Utilities
+// Utilidades
 const pkg = require('../package')
 const convert = require('../')
 const help = require('../lib/help')
 
-// Parse the supplied commands and options
+// Extraer comandos y opciones
 const { _, ...args } = parse({
   '--version': Boolean,
   '--help': Boolean,
@@ -22,8 +22,8 @@ const { _, ...args } = parse({
   '-s': '--special'
 })
 
-// Output the package's version if
-// the `--version was supplied
+// Mostrar la versión del paquete
+// si `--version` está presente
 if (args['--version']) {
   console.log(pkg.version)
   process.exit(0)
@@ -38,7 +38,7 @@ const main = async () => {
   const sub = _.join(' ')
 
   if (!sub) {
-    console.error(`${red('Error!')} Please specify an input: ${grey('title "input"')}`)
+    console.error(`${red('Error!')} Por favor, especifique un texto: ${grey('title-es "texto"')}`)
     process.exit(1)
   }
 
@@ -51,12 +51,12 @@ const main = async () => {
     try {
       await clipboardy.write(output)
     } catch (err) {
-      console.error(`${red('Error!')} Could not write to clipboard`)
+      console.error(`${red('Error!')} No se pudo escribir en el portapapeles`)
       process.exit(1)
     }
   }
 
-  console.log(`${output}${copy ? ' ' + blue('[copied]') : ''}`)
+  console.log(`${output}${copy ? ' ' + blue('[copiado]') : ''}`)
 }
 
 main()

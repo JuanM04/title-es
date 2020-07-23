@@ -1,72 +1,74 @@
-# title
+# title-es
 
-This package correctly capitalizes your titles as per [The Chicago Manual of Style](http://www.chicagomanualofstyle.org/home.html). Furthermore, all of
-ZEIT's product names are capitalized properly as well.
+**FORK DE [title](https://github.com/vercel/title) EN ESPAÑOL**
 
-## Usage
+Este paquete formatea tu texto siguiendo _[The Chicago Manual of Style](http://www.chicagomanualofstyle.org/home.html)_.
 
-Firstly, install the package:
+## Uso
+
+Primero, instala el paquete:
 
 ```bash
-yarn add title
+yarn add title-es
 ```
 
-Then load it and convert any input:
+Cárgalo y convierte cualquier texto:
 
 ```js
-const title = require('title')
+const title = require('title-es')
 
-title('noW deSktop and now cLI are prODUCts of zeIt')
+title('mUrieRon tRES perSonas Y UN BolIviano')
 
-// Will result in:
-// "Now Desktop and Now CLI Are Products of ZEIT"
+// Resultará en:
+// "Murieron Tres Personas y un Boliviano"
 ```
 
-You can even pass words that should be capitalized as specified:
+Podés especificar otras palabras:
 
 ```js
-title('FaCEbook is great', {
-  special: [ 'facebook' ]
+title('mE gustA eScriBir Owo', {
+  special: [ 'OwO' ]
 })
 
-// Will result in:
-// "facebook is great"
+// Resultará en:
+// "Me Gusta Escribir OwO"
 ```
 
-That's it!
+¡Eso es todo!
 
-### Command Line
+### Línea de Comandos
 
-You can also convert titles in the command line, if you want. Install the package globally:
+Podés formatear títulos desde la línea de comandos..., si te va eso. Podés instalarlo globalmente:
 
 ```bash
-yarn global add title
+yarn global add title-es
 ```
 
-Next, run it:
+Y ejecutarlo:
 
 ```bash
-title "noW deSktop and now cLI are prODUCts of zeIt"
+title-es "haY quE Ver, hAY QUE vEEEEEER"
 
-# Will result in:
-# "Now Desktop and Now CLI Are Products of ZEIT"
+# Resultará en:
+# "Hay Que Ver, Hay Que Veeeeeer"
 ```
 
-To see all available options, run:
+Para ver todas las opciones disponibles, corré:
 
 ```bash
-title -h
+title-es -h
 ```
 
-## Contributing
+## Contribuir
 
-1. [Fork](https://help.github.com/articles/fork-a-repo/) this repository to your own GitHub account and then [clone](https://help.github.com/articles/cloning-a-repository/) it to your local device
-2. Uninstall `title` if it's already installed: `yarn global remove title`
-3. Link it to the global module directory: `yarn link`
+1. [Fork](https://help.github.com/articles/fork-a-repo/) este repositorio a tu cuenta de GitHub y [clónalo](https://help.github.com/articles/cloning-a-repository/) a tu PC.
+2. Desinstala `title-es` si lo tienes instalado: `yarn global remove title-es`
+3. Vincula el repositorio con el comando global: `yarn link`
 
-After that, you can use the `title` command everywhere.
+Ahora, puedes usar `title-es` donde quieras.
 
-## Author
+## Autores
 
-- Leo Lamprecht ([@notquiteleo](https://twitter.com/notquiteleo)) - [ZEIT](https://zeit.co)
-- Josh Junon ([@Qix-](https://github.com/Qix-)) - [ZEIT](https://zeit.co)
+- Leo Lamprecht ([@notquiteleo](https://twitter.com/notquiteleo)) - [Vercel](https://vercel.com)
+- Josh Junon ([@Qix-](https://github.com/Qix-)) - [Vercel](https://vercel.com)
+- Juan Martín Seery ([@JuanM04](https://github.com/JuanM04)) - Traducción al español
