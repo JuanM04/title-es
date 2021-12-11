@@ -70,5 +70,5 @@ Ahora, puedes usar `title-es` donde quieras.
 ## Autores
 
 - Leo Lamprecht ([@notquiteleo](https://twitter.com/notquiteleo)) - [Vercel](https://vercel.com)
-- Josh Junon ([@Qix-](https://github.com/Qix-)) - [Vercel](https://vercel.com)
+- Josh Junon ([@Qix-](https://github.com/Qix-))
 - Juan Martín Seery ([@JuanM04](https://github.com/JuanM04)) - Traducción al español

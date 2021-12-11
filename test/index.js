@@ -12,8 +12,10 @@ test((t) => {
 });
 
 test((t) => {
-  const from = "axel KicIlloF anUNciÓ que pagarÁ $500 pOr día a enferMos de corOnavirus que se alojEn en ceNtrOs extraHospiTaLaRIoS";
-  const to = "Axel Kicillof Anunció Que Pagará $500 por Día a Enfermos de Coronavirus Que Se Alojen en Centros Extrahospitalarios";
+  const from =
+    "axel KicIlloF anUNciÓ que pagarÁ $500 pOr día a enferMos de corOnavirus que se alojEn en ceNtrOs extraHospiTaLaRIoS";
+  const to =
+    "Axel Kicillof Anunció Que Pagará $500 por Día a Enfermos de Coronavirus Que Se Alojen en Centros Extrahospitalarios";
 
   t.is(title(from), to);
 });
@@ -21,6 +23,13 @@ test((t) => {
 test((t) => {
   const from = "las mayúsculas donde corresponden";
   const to = "Las Mayúsculas Donde Corresponden";
+
+  t.is(title(from), to);
+});
+
+test((t) => {
+  const from = "dijo que sería “muy loco”";
+  const to = "Dijo Que Sería “Muy Loco”";
 
   t.is(title(from), to);
 });
